@@ -1,90 +1,88 @@
 import 'package:flutter/material.dart';
-import 'input_page.dart';
+import 'package:get/get.dart';
+import 'test.dart';
 
 void main() {
-  runApp(const MyApp());
+ // runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '简单 Flutter 应用',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: '计数器示例'),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return GetMaterialApp(
+//       title: 'IO Template Demo',
+//       home: const IOTemplatePage(),
+//     );
+//   }
+// }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+// class IOTemplatePage extends StatefulWidget {
+//   const IOTemplatePage({super.key});
 
-  final String title;
+//   @override
+//   State<IOTemplatePage> createState() => _IOTemplatePageState();
+// }
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
+// class _IOTemplatePageState extends State<IOTemplatePage> {
+//   CSection_IO? sectionIO;
+  
+//   @override
+//   void initState() {
+//     super.initState();
+//     loadData();
+//   }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  String _selectedItem = 'Option 1';
+//   Future<void> loadData() async {
+//     try {
+//       final data = await CSection_IO.loadFromAsset();
+//       setState(() {
+//         sectionIO = data;
+//       });
+//     } catch (e) {
+//       Get.snackbar('Error', 'Failed to load IO template: $e');
+//     }
+//   }
 
-  void _goToInputPage() async {
-    final result = await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => InputPage(initialValue: _counter),
-      ),
-    );
-
-    print('返回结果: $result');
-    if (result != null) {
-      setState(() {
-        _counter = result;
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('主页')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('当前数值: $_counter'),
-            const SizedBox(height: 20), // 添加一些间距
-            DropdownButton<String>(
-              value: _selectedItem,
-              onChanged: (String? newValue) {
-                if (newValue != null) {
-                  setState(() {
-                    _selectedItem = newValue;
-                  });
-                }
-              },
-              items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-            ),
-            const SizedBox(height: 20), // 再添加一些间距
-            Text('选中的选项: $_selectedItem'), // 显示选中的选项
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _goToInputPage,
-        child: const Icon(Icons.edit),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('IO Template'),
+//       ),
+//       body: sectionIO == null
+//           ? const Center(child: CircularProgressIndicator())
+//           : ListView.builder(
+//               itemCount: sectionIO!.vgroups.length,
+//               itemBuilder: (context, index) {
+//                 final groupKey = sectionIO!.vgroups.keys.elementAt(index);
+//                 final group = sectionIO!.vgroups[groupKey]!;
+//                 return ExpansionTile(
+//                   title: Text(groupKey),
+//                   children: [
+//                     ListTile(
+//                       title: const Text('Inputs:'),
+//                       subtitle: Column(
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: group.vinputs
+//                             .map((input) => Text('${input.vname}: ${input.vcomment}'))
+//                             .toList(),
+//                       ),
+//                     ),
+//                     ListTile(
+//                       title: const Text('Outputs:'),
+//                       subtitle: Column(
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: group.voutputs
+//                             .map((output) => Text('${output.vname}: ${output.vcomment}'))
+//                             .toList(),
+//                       ),
+//                     ),
+//                   ],
+//                 );
+//               },
+//             ),
+//     );
+//   }
+// }

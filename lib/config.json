@@ -1,0 +1,45 @@
+{
+  "appSettings": {
+    "appName": "Flutter GetX Demo",
+    "version": "1.0.0",
+    "theme": {
+      "primaryColor": "#2196F3",
+      "accentColor": "#FFC107",
+      "isDarkMode": false
+    },
+    "api": {
+      "baseUrl": "https://api.example.com",
+      "timeout": 30000,
+      "endpoints": {
+        "login": "/auth/login",
+        "users": "/users",
+        "products": "/products"
+      }
+    },
+    "features": {
+      "enablePushNotifications": true,
+      "enableAnalytics": true,
+      "enableCrashReporting": true
+    },
+    "defaultLanguage": "zh_CN",
+    "supportedLanguages": [
+      {
+        "code": "zh_CN",
+        "name": "简体中文"
+      },
+      {
+        "code": "en_US",
+        "name": "English"
+      },
+      {
+        "code": "ja_JP",
+        "name": "日本語"
+      }
+    ]
+  },
+  "debugSettings": {
+    "logLevel": "INFO",
+    "showDebugBanner": false,
+    "mockApiResponses": false
+  }
+} 

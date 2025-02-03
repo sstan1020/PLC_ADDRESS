@@ -1,108 +1,44 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'dart:io';
+import 'models/section_io.dart';
 
-//uuuuu
-void main() {
-  runApp(const MyApp());
+// // 读取并解析数据
+// Future<CSection_IO> readAndParseJson() async {
+//   final file = File(
+//       'd:/VS Code/flutter4/lib/json_data/asi/user1/project1/template_IO.json');
+//   var jsonString = await file.readAsString();
+
+//   // 移除末尾的分号（如果存在）
+//   jsonString = jsonString.trim();
+//   if (jsonString.endsWith(';')) {
+//     jsonString = jsonString.substring(0, jsonString.length - 1);
+//   }
+
+//   final jsonData = json.decode(jsonString);
+//   return CSection_IO.fromJson(jsonData);
+// }
+
+// void main() async {
+//   final section = await readAndParseJson();
+//   print(section.vgroups['DFI_CI']!.vinputs[0].toString());
+// }
+Future<String> prepareFood() async {
+  print('厨师开始做菜');
+  await Future.delayed(Duration(seconds: 3)); // 模拟做菜时间
+  return '一盘宫保鸡丁';
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-<<<<<<< Updated upstream
-    return MaterialApp(
-      title: '简单计数器',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomeScreen(),
-    );
-  }
+Future<String> prepareDrink() async {
+  print('服务员准备饮料');
+  await Future.delayed(Duration(seconds: 1)); // 模拟准备饮料时间
+  return '一杯可乐';
 }
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+void main() async {
+  print('开始点餐');
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
+  // Future.wait 可以同时处理多个异步操作
+  final results = await Future.wait([prepareFood(), prepareDrink()]);
 
-class _HomeScreenState extends State<HomeScreen> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('简单计数器示例222'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              '你已经点击了这么多次:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: '增加',
-        child: const Icon(Icons.add),
-      ),
-    );
-=======
-    return ListView(
-        padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
-        children: [
-          const Divider(),
-          const ListTile(
-            title: Text('Item 1'),
-          ),
-          const Divider(),
-          ListTile(
-            title: const Text('Item 2'),
-            subtitle: const Text('Subtitle'),
-            leading: const CircleAvatar(
-              backgroundImage: NetworkImage(
-                  'https://images.unsplash.com/photo-1501196354995-cbb66c0ecc51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'),
-            ),
-            trailing: const Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.grey,
-            ),
-            isThreeLine: true,
-            dense: true,
-            contentPadding: const EdgeInsets.all(20),
-            selected: true,
-            selectedTileColor: Colors.blue,
-            selectedColor: Colors.white,
-            enabled: true,
-            onLongPress: () {
-              print('Long press');
-            },
-            onTap: () {
-              print('Tap');
-            },
-          ),
-          const Divider(),
-          const ListTile(
-            title: Text('Item 3'),
-          ),
-          const Divider(),
-        ]);
->>>>>>> Stashed changes
-  }
+  print('您的餐品准备好了：${results[0]} 和 ${results[1]}');
 }

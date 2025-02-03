@@ -1,13 +1,6 @@
 {
     "version": "0.2.0",
     "configurations": [
-
-      {
-        "name": "Dart: Run Program",
-        "request": "launch",
-        "type": "dart",
-        "program": "${workspaceFolder}/CASI.dart"
-      }
     ]
   }
   

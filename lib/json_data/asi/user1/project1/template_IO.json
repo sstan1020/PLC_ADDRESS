@@ -1,0 +1,325 @@
+{
+    "DFI_CI": {
+      "INPUT": [
+        {"Name": "I_DRI_AUT_", "Comment": "DRIVE AUTO "},
+        {"Name": "I_DRI_RDY_", "Comment": "DRIVE READY "},
+        {"Name": "I_PE1_CHI_", "Comment": "CHECK IN INDUCTION HEAD END SENSOR "},
+        {"Name": "I_PE2_CHI_", "Comment": "CHECK IN INDUCTION TAIL END SENSOR "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_MR_FWD_", "Comment": "MOTOR RUN FORWARD "},
+        {"Name": "O_MTR_REV_", "Comment": "MOTOR RUN REVERSE "},
+        {"Name": "O_DR_LED_", "Comment": "DRIVE LED "},
+        {"Name": "O_Q3_", "Comment": "Spare "}
+      ]
+    },
+    "DFI1": {
+      "INPUT": [
+        {"Name": "I_AUT_", "Comment": "Drive Auto "},
+        {"Name": "I_RDY_", "Comment": "Ready "},
+        {"Name": "I_I6_", "Comment": "Spare "},
+        {"Name": "I_I7_", "Comment": "Spare "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_DR_RST_", "Comment": "DRIVE RESET "},
+        {"Name": "O_Q5_", "Comment": "Spare "},
+        {"Name": "O_Q6_", "Comment": "Spare "},
+        {"Name": "O_Q7_", "Comment": "Spare "}
+      ]
+    },
+    "DFI2": {
+      "INPUT": [
+        {"Name": "I_PE1_", "Comment": "Head End Photo-eye "},
+        {"Name": "I_PE2_", "Comment": "Tail End Photo-eye "},
+        {"Name": "I_FB_", "Comment": "Running Feedback "},
+        {"Name": "I_SE_", "Comment": "Encoder "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_MR_FWD_", "Comment": "MOTOR RUN FORWARD "},
+        {"Name": "O_MR_REV_", "Comment": "MOTOR RUN REVERSE "},
+        {"Name": "O_DR_LED_", "Comment": "Drive LED "},
+        {"Name": "O_Q3_", "Comment": "Spare "}
+      ]
+    },
+    "CS_1A": {
+      "INPUT": [
+        {"Name": "I_CS_I0_", "Comment": "Spare "},
+        {"Name": "I_CS_I1_", "Comment": "Spare "},
+        {"Name": "I_CS_RPB_", "Comment": "CS Reset Push Button "},
+        {"Name": "I_CS_I2_", "Comment": "Spare "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_CS_Q0_", "Comment": "Spare "},
+        {"Name": "O_CS_Q1_", "Comment": "Spare "},
+        {"Name": "O_CS_RPL_", "Comment": "CS Reset Pilot Lamp "},
+        {"Name": "O_CS_Q2_", "Comment": "Spare "}
+      ]
+    },
+    "CS_5A": {
+      "INPUT": [
+        {"Name": "I_CS_I0_", "Comment": "Spare "},
+        {"Name": "I_CS_I1_", "Comment": "Spare "},
+        {"Name": "I_CS_RPB_", "Comment": "CS Reset Push Button "},
+        {"Name": "I_CS_ORPB_", "Comment": "CS Oversized Reset Push Button "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_CS_Q0_", "Comment": "Spare "},
+        {"Name": "O_CS_Q1_", "Comment": "Spare "},
+        {"Name": "O_CS_RPL_", "Comment": "CS Reset Pilot Lamp "},
+        {"Name": "O_CS_OSL_", "Comment": "Oversized Lamp "}
+      ]
+    },
+    "CS1_7A": {
+      "INPUT": [
+        {"Name": "I_CS_CNTR_ON_", "Comment": "COUNTER ON 2 WAY KEY SS "},
+        {"Name": "I_CS_SPB_", "Comment": "STOP RED PB "},
+        {"Name": "I_CS_RPB_", "Comment": "RESET YELLOW PB "},
+        {"Name": "I_CS_OS_RST_", "Comment": "OVERSIZE RESET WHITE PB "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_CS_Q4_", "Comment": "Spare "},
+        {"Name": "O_CS_STPL_", "Comment": "STOP PB PL(RED) "},
+        {"Name": "O_CS_RPL_", "Comment": "RESET PL(YELLOW) "},
+        {"Name": "O_CS_OSL_", "Comment": "OVERSIZE RESET PL(WHITE) "}
+      ]
+    },
+    "CS2_7A": {
+      "INPUT": [
+        {"Name": "I_CS_FORWARD_", "Comment": "BELT FORWARD GREEN PB "},
+        {"Name": "I_CS_REVERSE_", "Comment": "BELT REVERSE BLACK PB "},
+        {"Name": "I_CS_RELEASE_", "Comment": "BAG RELEASE BLUE PB "},
+        {"Name": "I_CS_OW_", "Comment": "OVER WEIGHT INPUT "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_CS_FWDL_", "Comment": "BELT FORWARD PL "},
+        {"Name": "O_CS_Q1_", "Comment": "Spare "},
+        {"Name": "O_CS_RELL_", "Comment": "BAG RELEASE PL "},
+        {"Name": "O_CS_Q3_", "Comment": "Spare "}
+      ]
+    },
+    "CS_17A": {
+      "INPUT": [
+        {"Name": "I_CS_TSW_", "Comment": "TEST MODE 2-WAY SELECTOR SWITCH "},
+        {"Name": "I_CS_IPB_", "Comment": "INSERT BAG BLUE PB "},
+        {"Name": "I_CS_RPB_", "Comment": "CS Reset Push Button "},
+        {"Name": "I_CS_ORPB_", "Comment": "CS Oversized Reset Push Button "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_CS_Q4_", "Comment": "Spare "},
+        {"Name": "O_CS_Q5_", "Comment": "Spare "},
+        {"Name": "O_CS_RPL_", "Comment": "RESET/RESTART PILOT LIGHT (YELLOW) "},
+        {"Name": "O_CS_OSL_", "Comment": "OVERSIZE RESET PILOT LIGHT (WHITE) "}
+      ]
+    },
+    "CS_18A": {
+      "INPUT": [
+        {"Name": "I_CS_I0_", "Comment": "Spare "},
+        {"Name": "I_CS_I1_", "Comment": "Spare "},
+        {"Name": "I_CS_RPB_", "Comment": "RESET/RESTART ILLUMINATED YELLOW PB "},
+        {"Name": "I_CS_REMPB_", "Comment": "REMOVE BAG BLACK PB "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_CS_Q0_", "Comment": "Spare "},
+        {"Name": "O_CS_Q1_", "Comment": "Spare "},
+        {"Name": "O_CS_RPL_", "Comment": "RESET/RESTART PILOT LIGHT (YELLOW) "},
+        {"Name": "O_CS_Q3_", "Comment": "Spare "}
+      ]
+    },
+    "DS_1A": {
+      "INPUT": [
+        {"Name": "I_DS_I0_", "Comment": "Spare "},
+        {"Name": "I_DS_I1_", "Comment": "Spare "},
+        {"Name": "I_DS_I2_", "Comment": "Spare "},
+        {"Name": "I_DS_I3_", "Comment": "Spare "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_DS_TLA_", "Comment": "AMBER STACKLIGHT "},
+        {"Name": "O_DS_TLR_", "Comment": "RED STACKLIGHT "},
+        {"Name": "O_DS_BUZ_", "Comment": "BUZZER "},
+        {"Name": "O_DS_I4_", "Comment": "Spare "}
+      ]
+    },
+    "RBHSD1": {
+      "INPUT": [
+        {"Name": "I_HSD_ISO_", "Comment": "MAIN ISOLATOR ON "},
+        {"Name": "I_HSD_TOL_A_", "Comment": "ARM INVERTER MPCB ON "},
+        {"Name": "I_HSD_TOL_B1_", "Comment": "BELT1 MOTOR MPCB ON "},
+        {"Name": "I_HSD_TOL_B2_", "Comment": "BELT2 MOTOR MPCB ON "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_HSD_I0_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I1_", "Comment": "SPARE "},
+        {"Name": "O_HSD_DS_TLA_", "Comment": "DS YELLOW STACKLIGHT "},
+        {"Name": "O_HSD_DS_TLR_", "Comment": "DS RED STACKLIGHT "}
+      ]
+    },
+    "RBHSD2": {
+      "INPUT": [
+        {"Name": "I_HSD_TOL_CF_", "Comment": "MOTOR COOLING FAN MPCB ON "},
+        {"Name": "I_HSD_I5_", "Comment": "SPARE "},
+        {"Name": "I_HSD_I6_", "Comment": "SPARE "},
+        {"Name": "I_HSD_STA_BOX_RDY_", "Comment": "MOTOR STARTER BOX READY "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_HSD_DS_BUZ_", "Comment": "DS BUZZER "},
+        {"Name": "O_HSD_I5_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I6_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I7_", "Comment": "SPARE "}
+      ]
+    },
+    "RBHSD3": {
+      "INPUT": [
+        {"Name": "I_HSD_RUN_FWD_A_", "Comment": "ARM MOTOR RUNNING "},
+        {"Name": "I_HSD_CON_B1_", "Comment": "BELT1 CONTACTOR ON "},
+        {"Name": "I_HSD_CON_B2_", "Comment": "BELT2 CONTACTOR ON "},
+        {"Name": "I_HSD_RUN_FWD_CF_", "Comment": "MOTOR COOLING FAN CONTACTOR ON "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_HSD_CS_HTL_", "Comment": "SYSTEM HEALTHY PILOT LIGHT "},
+        {"Name": "O_HSD_CS_MOL_", "Comment": "MOTOR OVERLOAD PILOT LIGHT "},
+        {"Name": "O_HSD_CS_RPL_", "Comment": "RPB FAULT RESET PILOT LIGHT "},
+        {"Name": "O_HSD_I1_3_", "Comment": "SPARE "}
+      ]
+    },
+    "RBHSD4": {
+      "INPUT": [
+        {"Name": "I_HSD_RDY_", "Comment": "ARM INVERTER HEALTHY "},
+        {"Name": "I_HSD_EXT_", "Comment": "HSD EXTEND POSITION SENSOR "},
+        {"Name": "I_HSD_RET_", "Comment": "HSD RETRACT POSITION SENSOR "},
+        {"Name": "I_HSD_I1_7_", "Comment": "SPARE "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_HSD_I1_4_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I1_5_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I1_6_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I1_7_", "Comment": "SPARE "}
+      ]
+    },
+    "RBHSD5": {
+      "INPUT": [
+        {"Name": "I_HSD_CS_AUT_", "Comment": "MANUAL MODE KSW "},
+        {"Name": "I_HSD_CS_KSW_", "Comment": "CYCLE KSW "},
+        {"Name": "I_HSD_CS_RPB_", "Comment": "RPB FAULT RESET/RESTART "},
+        {"Name": "I_HSD_RUN_FWD_B_", "Comment": "BELT RUN "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_HSD_MR_A_", "Comment": "ARM MOTOR RUN "},
+        {"Name": "O_HSD_MR_B1_", "Comment": "BELT1 MOTOR RUN "},
+        {"Name": "O_HSD_MR_B2_", "Comment": "BELT2 MOTOR RUN "},
+        {"Name": "O_HSD_RST_", "Comment": "INVERTER RESET "}
+      ]
+    },
+    "RBHSD6": {
+      "INPUT": [
+        {"Name": "I_HSD_I2_4_", "Comment": "SPARE "},
+        {"Name": "I_HSD_I2_5_", "Comment": "SPARE "},
+        {"Name": "I_HSD_I2_6_", "Comment": "SPARE "},
+        {"Name": "I_HSD_I2_7_", "Comment": "SPARE "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_HSD_I2_4_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I2_5_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I2_6_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I2_7_", "Comment": "SPARE "}
+      ]
+    },
+    "RBHSD7": {
+      "INPUT": [
+        {"Name": "I_HSD_I3_0_", "Comment": "SPARE "},
+        {"Name": "I_HSD_I3_1_", "Comment": "SPARE "},
+        {"Name": "I_HSD_I3_2_", "Comment": "SPARE "},
+        {"Name": "I_HSD_I3_3_", "Comment": "SPARE "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_HSD_MR_CF_", "Comment": "MOTOR COOLING FAN RUN "},
+        {"Name": "O_HSD_I3_1_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I3_2_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I3_3_", "Comment": "SPARE "}
+      ]
+    },
+    "RBHSD8": {
+      "INPUT": [
+        {"Name": "I_HSD_I3_4_", "Comment": "SPARE "},
+        {"Name": "I_HSD_I3_5_", "Comment": "SPARE "},
+        {"Name": "I_HSD_I3_6_", "Comment": "SPARE "},
+        {"Name": "I_HSD_I3_7_", "Comment": "SPARE "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_HSD_I3_4_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I3_5_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I3_6_", "Comment": "SPARE "},
+        {"Name": "O_HSD_I3_7_", "Comment": "SPARE "}
+      ]
+    },
+    "RBSFD1": {
+      "INPUT": [
+        {"Name": "I_SPD_STAT_RDY_SFD_", "Comment": "MOTOR STARTER READY "},
+        {"Name": "I_SPD_ARM_MTR_OVL_SFD_", "Comment": "ARM BELT MOTOR OVERLOAD "},
+        {"Name": "I_SPD_SW_MTR_OVL_SFD_", "Comment": "SWING MOTOR OVERLOAD "},
+        {"Name": "I_SPD_I7_", "Comment": " "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_SPD_MRB_", "Comment": "ARM BELT MOTOR RUN "},
+        {"Name": "O_SPD_MRA_", "Comment": "SWING MOTOR RUN "},
+        {"Name": "O_SPD_O6_", "Comment": "SPARE "},
+        {"Name": "O_SPD_O7_", "Comment": "SPARE "}
+      ]
+    },
+    "RBSFD2": {
+      "INPUT": [
+        {"Name": "I_SPD_KSW_MAN_", "Comment": "MANUAL MODE KSW "},
+        {"Name": "I_SPD_KSW_", "Comment": "CYCLE KSW "},
+        {"Name": "I_SPD_RPB_", "Comment": "FAULT RESET /RESTART PBL "},
+        {"Name": "I_SPD_JBPB_", "Comment": "BELT RUN PB"}
+      ],
+      "OUTPUT": [
+        {"Name": "O_SPD_CS_HTL_", "Comment": "SYSTEM HEALTHY "},
+        {"Name": "O_SPD_CS_MOL_", "Comment": "MOTOR OVERLOAD "},
+        {"Name": "O_SPD_O2_", "Comment": "SPARE "},
+        {"Name": "O_SPD_CS_RPL_", "Comment": "FAULT RESET / RESTART "}
+      ]
+    },
+    "RBSFD3": {
+      "INPUT": [
+        {"Name": "I_SPD_CON_B_", "Comment": "ARM BELT MOTOR CONTACTOR ON "},
+        {"Name": "I_SPD_CON_A_", "Comment": "SWING MOTOR CONTACTOR ON "},
+        {"Name": "I_SPD_RET_", "Comment": "SFD EXTEND POSITION SENSOR "},
+        {"Name": "I_SPD_EXT_", "Comment": "SFD RETRACT POSITION SENSOR "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_SPD_O1_4_", "Comment": "SPARE "},
+        {"Name": "O_SPD_O1_5_", "Comment": "SPARE "},
+        {"Name": "O_SPD_O1_6_", "Comment": "SPARE "},
+        {"Name": "O_SPD_O1_7_", "Comment": "SPARE "}
+      ]
+    },
+    "RBFSD1": {
+      "INPUT": [
+        {"Name": "I_FSD_MTR_STR_RDY_", "Comment": "MOTOR STARTER BOX READY "},
+        {"Name": "I_FSD_MAN_KSW_", "Comment": "MANUAL MODE KSW "},
+        {"Name": "I_FSD_OPN_PB_", "Comment": "OPEN PUSH BUTTON "},
+        {"Name": "I_FSD_CLS_PB_", "Comment": "CLOSE PUSH BUTTON "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_FSD_DR_OPN_", "Comment": "FSD DOOR OPEN "},
+        {"Name": "O_FSD_DR_CLS_", "Comment": "FSD DOOR CLOSE "},
+        {"Name": "O_FSD_DR_STP_", "Comment": "FSD DOOR STOP "},
+        {"Name": "O_FSD_Q7_", "Comment": "SPARE "}
+      ]
+    },
+    "RBFSD2": {
+      "INPUT": [
+        {"Name": "I_FSD_F_", "Comment": "DOOR INSTRUCTION SYSTEM "},
+        {"Name": "I_FSD_UP_", "Comment": "DOOR OPEN POSITION SENSOR "},
+        {"Name": "I_FSD_DN_", "Comment": "DOOR CLOSE SENSOR "},
+        {"Name": "I_FSD_I3_", "Comment": "SPARE "}
+      ],
+      "OUTPUT": [
+        {"Name": "O_FSD_BRK_EN_", "Comment": "BRAKE RELESE ENABLE "},
+        {"Name": "O_FSD_Q1_", "Comment": "SPARE "},
+        {"Name": "O_FSD_SYS_HEL_WPL_", "Comment": "SYSTEM HEALTHY WHITE PILOT LIGHT "},
+        {"Name": "O_FSD_Q3_", "Comment": "SPARE "}
+      ]
+    }
+  };
+  
