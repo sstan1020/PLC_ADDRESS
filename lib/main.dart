@@ -1,88 +1,27 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'test.dart';
+// import 'dart:convert';
+// import 'dart:io';
+// import 'models/section_io.dart';
+import 'services/json_service.dart';
 
-void main() {
- // runApp(const MyApp());
+Future<String> loadMessage() async {
+  // 延迟2秒，模拟耗时操作
+  await Future.delayed(Duration(seconds: 2));
+  return '你好，这是异步消息';
 }
 
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
+void main() async {
+  // 读取 node.json 为字符串
+  final jsonString = await JsonService.loadJsonString(
+    Name_Path: 'lib/json_data/',
+    Name_File: 'nodes',
+  );
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return GetMaterialApp(
-//       title: 'IO Template Demo',
-//       home: const IOTemplatePage(),
-//     );
-//   }
-// }
+  print(jsonString);
 
-// class IOTemplatePage extends StatefulWidget {
-//   const IOTemplatePage({super.key});
+  // final section = await JsonService.loadSectionIO(
+  //   Name_Path: 'lib/json_data/',
+  //   Name_File: 'Models',
+  // );
 
-//   @override
-//   State<IOTemplatePage> createState() => _IOTemplatePageState();
-// }
-
-// class _IOTemplatePageState extends State<IOTemplatePage> {
-//   CSection_IO? sectionIO;
-  
-//   @override
-//   void initState() {
-//     super.initState();
-//     loadData();
-//   }
-
-//   Future<void> loadData() async {
-//     try {
-//       final data = await CSection_IO.loadFromAsset();
-//       setState(() {
-//         sectionIO = data;
-//       });
-//     } catch (e) {
-//       Get.snackbar('Error', 'Failed to load IO template: $e');
-//     }
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('IO Template'),
-//       ),
-//       body: sectionIO == null
-//           ? const Center(child: CircularProgressIndicator())
-//           : ListView.builder(
-//               itemCount: sectionIO!.vgroups.length,
-//               itemBuilder: (context, index) {
-//                 final groupKey = sectionIO!.vgroups.keys.elementAt(index);
-//                 final group = sectionIO!.vgroups[groupKey]!;
-//                 return ExpansionTile(
-//                   title: Text(groupKey),
-//                   children: [
-//                     ListTile(
-//                       title: const Text('Inputs:'),
-//                       subtitle: Column(
-//                         crossAxisAlignment: CrossAxisAlignment.start,
-//                         children: group.vinputs
-//                             .map((input) => Text('${input.vname}: ${input.vcomment}'))
-//                             .toList(),
-//                       ),
-//                     ),
-//                     ListTile(
-//                       title: const Text('Outputs:'),
-//                       subtitle: Column(
-//                         crossAxisAlignment: CrossAxisAlignment.start,
-//                         children: group.voutputs
-//                             .map((output) => Text('${output.vname}: ${output.vcomment}'))
-//                             .toList(),
-//                       ),
-//                     ),
-//                   ],
-//                 );
-//               },
-//             ),
-//     );
-//   }
-// }
+  // print(section?.vgroups['DFI_CI']?.vinputs[0].toString());
+}

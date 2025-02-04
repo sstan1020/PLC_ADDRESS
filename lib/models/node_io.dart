@@ -1,4 +1,3 @@
-
 class CNode_IO {
   final String vname;
   final String vcomment;
@@ -14,6 +13,6 @@ class CNode_IO {
 
   @override
   String toString() {
-    return 'name : $vname comment : $vcomment';
+    return 'Name : $vname Comment : $vcomment';
   }
 }
