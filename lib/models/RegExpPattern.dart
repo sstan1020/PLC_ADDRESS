@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
-
 // Future<void> example_RegExp() async {
 //   // Load and parse JSON file containing RegExp patterns
 //   final file = File('lib/json_data/RegExps.json');

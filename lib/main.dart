@@ -3,7 +3,7 @@ import 'models/nodes.dart';
 import 'models/models.dart';
 import 'models/process.dart';
 
-void main() async {
+Future<void> main() async {
   CNodes nodes = await processNodes(
       Name_Path: 'lib/json_data/',
       Name_File: 'NodesPLC17_ASI703B',
@@ -19,10 +19,10 @@ void main() async {
       isPrintTitle: false,
       isPrintContent: true,
       addressStart: 1200,
-      valueSwitch: 1,
+      valueSwitch: 0,
       offsetBit: 4,
-      start: 4,
-      end: -1);
+      start: 2,
+      end: 3);
 }
 
 
@@ -52,71 +52,76 @@ void main() async {
 
 
 
-  // await example_RegExp();
-  // await exampleNodesUsage();
-  // await Example_loadModels();
 
-  // dynamic jsonStringRegExps = await JsonService.loadJsonString(
-  //   Name_Path: 'lib/json_data/',
-  //   Name_File: 'RegExps',
-  // );
 
-  // dynamic jsonDataRegExps = JsonService.decodeJsonString(jsonStringRegExps!);
-  // CRegExps RegExps = CRegExps.fromJson(jsonDataRegExps);
 
-  // dynamic jsonStringNodes = await JsonService.loadJsonString(
-  //   Name_Path: 'lib/json_data/',
-  //   Name_File: 'nodes',
-  // );
 
-  // dynamic jsonDataNodes = JsonService.decodeJsonString(jsonStringNodes!);
 
-  // CNodes nodes = CNodes.fromJson(jsonDataNodes);
+// await example_RegExp();
+// await exampleNodesUsage();
+// await Example_loadModels();
 
-  // dynamic jsonStringModels = await JsonService.loadJsonString(
-  //   Name_Path: 'lib/json_data/',
-  //   Name_File: 'Models',
-  // );
+// dynamic jsonStringRegExps = await JsonService.loadJsonString(
+//   Name_Path: 'lib/json_data/',
+//   Name_File: 'RegExps',
+// );
 
-  // dynamic jsonDataModels = JsonService.decodeJsonString(jsonStringModels!);
+// dynamic jsonDataRegExps = JsonService.decodeJsonString(jsonStringRegExps!);
+// CRegExps RegExps = CRegExps.fromJson(jsonDataRegExps);
 
-  // CModels_Sections sections = CModels_Sections.fromJson(jsonDataModels);
+// dynamic jsonStringNodes = await JsonService.loadJsonString(
+//   Name_Path: 'lib/json_data/',
+//   Name_File: 'nodes',
+// );
 
-  // processVEntries(nodes.ventries, RegExps, sections);
+// dynamic jsonDataNodes = JsonService.decodeJsonString(jsonStringNodes!);
 
-  // nodes.ventries.forEach((element) {
-  //   element.forEach((key, value) {
-  //     if (value.toString().isNotEmpty) {
-  //       print('Key number: $key');
-  //       print('big Value: $value');
-  //       CRegExpResult regextresult = RegExps.parse(value);
-  //       print('Key: ${regextresult.key}');
-  //       print('Value: ${regextresult.value}');
+// CNodes nodes = CNodes.fromJson(jsonDataNodes);
 
-  //       if (sections.vsections.containsKey(regextresult.key)) {
-  //         CModels_Groups group = sections.vsections[regextresult.key]!;
-  //         // group.vinputs.forEach((element) {
-  //         //   print('Input: ${element.toString()}');
-  //         // });
-  //         // group.voutputs.forEach((element) {
-  //         //   print('Output: ${element.toString()}');
-  //         // });
-  //         var addressgen = CAddressGenerator();
-  //         var entries = addressgen.lgenerateEntries(
-  //           addressStart: 1200,
-  //           byteNode: int.parse(key),
-  //           valueSwitch: 1,
-  //           offsetBit: 4,
-  //           groups: group,
-  //           value: regextresult.value,
-  //         );
+// dynamic jsonStringModels = await JsonService.loadJsonString(
+//   Name_Path: 'lib/json_data/',
+//   Name_File: 'Models',
+// );
 
-  //         entries.getFormattedEntries().forEach((element) {
-  //           print('${element}');
-  //           ;
-  //         });
-  //       }
-  //       print('-------------------');
-  //     }
-  //   });
-  // });
+// dynamic jsonDataModels = JsonService.decodeJsonString(jsonStringModels!);
+
+// CModels_Sections sections = CModels_Sections.fromJson(jsonDataModels);
+
+// processVEntries(nodes.ventries, RegExps, sections);
+
+// nodes.ventries.forEach((element) {
+//   element.forEach((key, value) {
+//     if (value.toString().isNotEmpty) {
+//       print('Key number: $key');
+//       print('big Value: $value');
+//       CRegExpResult regextresult = RegExps.parse(value);
+//       print('Key: ${regextresult.key}');
+//       print('Value: ${regextresult.value}');
+
+//       if (sections.vsections.containsKey(regextresult.key)) {
+//         CModels_Groups group = sections.vsections[regextresult.key]!;
+//         // group.vinputs.forEach((element) {
+//         //   print('Input: ${element.toString()}');
+//         // });
+//         // group.voutputs.forEach((element) {
+//         //   print('Output: ${element.toString()}');
+//         // });
+//         var addressgen = CAddressGenerator();
+//         var entries = addressgen.lgenerateEntries(
+//           addressStart: 1200,
+//           byteNode: int.parse(key),
+//           valueSwitch: 1,
+//           offsetBit: 4,
+//           groups: group,
+//           value: regextresult.value,
+//         );
+
+//         entries.getFormattedEntries().forEach((element) {
+//           print('${element}');
+//           ;
+//         });
+//       }
+//       print('-------------------');
+//     }
+//   });
+// });

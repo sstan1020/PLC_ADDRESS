@@ -1,10 +1,8 @@
-import 'dart:io';
-import 'dart:convert';
-import 'package:flutter4/models/RegExpPattern.dart';
-import 'package:flutter4/models/Address.dart';
-import 'package:flutter4/models/json_service.dart';
-import 'package:flutter4/models/models.dart';
-import 'package:flutter4/models/nodes.dart';
+import 'package:FLUTTER_ASI/models/RegExpPattern.dart';
+import 'package:FLUTTER_ASI/models/Address.dart';
+import 'package:FLUTTER_ASI/models/json_service.dart';
+import 'package:FLUTTER_ASI/models/models.dart';
+import 'package:FLUTTER_ASI/models/nodes.dart';
 
 void processVEntries({
   required CNodes nodes,
@@ -19,12 +17,12 @@ void processVEntries({
   int end = -1, // 新增参数，-1 表示处理到最后
 }) {
   if (end == -1) {
-    end = nodes.ventries.length;
+    end = nodes.vnodes.length;
   }
 
   // nodes.ventries.forEach((entry) {
-  for (int i = start; i < end; i++) {
-    nodes.ventries[i].forEach((key, value) {
+  for (int i = start; i <= end; i++) {
+    nodes.vnodes[i].forEach((key, value) {
       // entry.forEach((key, value) {
       String valueString = value.toString();
 
@@ -61,20 +59,25 @@ void processVEntries({
             });
           }
         }
+
         if (isPrintTitle) {
-          print('-------------------');
+          print('');
         }
       }
     });
   }
 }
 
-Future<CModels_Sections> processSections({required String Name_Path, required String Name_File, required bool isPrint}) async {
+Future<CModels_Sections> processSections(
+    {required String Name_Path,
+    required String Name_File,
+    required bool isPrint}) async {
   dynamic jsonStringModels = await JsonService.loadJsonString(
     Name_Path: Name_Path,
     Name_File: Name_File,
   );
-  dynamic jsonDataModels = JsonService.decodeJsonString(jsonString: jsonStringModels!);
+  dynamic jsonDataModels =
+      JsonService.decodeJsonString(jsonString: jsonStringModels!);
 
   CModels_Sections sections = CModels_Sections.fromJson(jsonDataModels);
   // Print nested data
@@ -92,14 +95,18 @@ Future<CModels_Sections> processSections({required String Name_Path, required St
   return sections;
 }
 
-Future<CNodes> processNodes({required String Name_Path, required String Name_File, required bool isPrint}) async {
+Future<CNodes> processNodes(
+    {required String Name_Path,
+    required String Name_File,
+    required bool isPrint}) async {
   // Load and parse JSON data
   dynamic jsonStringNodes = await JsonService.loadJsonString(
     Name_Path: Name_Path,
     Name_File: Name_File,
   );
 
-  dynamic jsonDataNodes = JsonService.decodeJsonString(jsonString: jsonStringNodes!);
+  dynamic jsonDataNodes =
+      JsonService.decodeJsonString(jsonString: jsonStringNodes!);
   CNodes nodes = CNodes.fromJson(jsonDataNodes);
 
   // Example 1: Print all nodes
@@ -110,13 +117,17 @@ Future<CNodes> processNodes({required String Name_Path, required String Name_Fil
   return nodes; // 返回CNodes对象
 }
 
-Future<CRegExps> processRegExp({required String Name_Path, required String Name_File, required bool isPrint}) async {
+Future<CRegExps> processRegExp(
+    {required String Name_Path,
+    required String Name_File,
+    required bool isPrint}) async {
   dynamic jsonStringRegExps = await JsonService.loadJsonString(
     Name_Path: Name_Path,
     Name_File: Name_File,
   );
 
-  dynamic jsonDataRegExps = JsonService.decodeJsonString(jsonString: jsonStringRegExps!);
+  dynamic jsonDataRegExps =
+      JsonService.decodeJsonString(jsonString: jsonStringRegExps!);
   CRegExps RegExps = CRegExps.fromJson(jsonDataRegExps);
 
   if (isPrint) {

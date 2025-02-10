@@ -3,7 +3,8 @@ import 'models.dart';
 class CAddressGenerator {
   CAddressMath vaddressMath;
 
-  CAddressGenerator({CAddressMath? addressBase}) : vaddressMath = addressBase ?? CAddressMath();
+  CAddressGenerator({CAddressMath? addressBase})
+      : vaddressMath = addressBase ?? CAddressMath();
 
   CAddressTables lgenerateEntries({
     required int addressStart,
@@ -112,5 +113,6 @@ class CAddressTables {
     return allEntries;
   }
 
-  List<String> getFormattedEntries() => getAllEntries().map((e) => e.toString()).toList();
+  List<String> getFormattedEntries() =>
+      getAllEntries().map((e) => e.toString()).toList();
 }
