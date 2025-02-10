@@ -1,0 +1,26 @@
+[
+    {
+      "RegExp": "^([A-Z]+\\d*)(_)([A-Z]+\\d+_[\\dA-Z]+)(_)(\\d+[A-Z])",
+      "Keys": [1, 2, 5],
+      "Values": [3, 4, 5],
+      "Example": "'CS1_CI68_01_7A' => {'Key': 'CS1_7A', 'Value': 'CI68_01_7A'}"
+    },
+    {
+      "RegExp": "^([A-Z]+\\d*)(_)(CI)(\\d+_[\\dA-Z]+)",
+      "Keys": [1, 2, 3],
+      "Values": [3, 4],
+      "Example": "'DFI_CI72_01' => {'Key': 'DFI_CI', 'Value': 'CI72_01'}"
+    },
+    {
+      "RegExp": "^([A-Z]+\\d*)(_)([A-Z]+\\d+_[\\dA-Z]+)",
+      "Keys": [1],
+      "Values": [3],
+      "Example": "'DFI1_TA01_07' => {'Key': 'DFI1', 'Value': 'TA01_07'}"
+    },
+    {
+      "RegExp": "^([A-Z]+\\d*)(_)([A-Z]+\\d+_[\\dA-Z]+)(_)([A-Z]+)",
+      "Keys": [1],
+      "Values": [3, 4, 5],
+      "Example": "'RBFSD1_TA01_05_FSD' => {'Key': 'RBFSD1', 'Value': 'TA01_05_FSD'}"
+    }
+]
