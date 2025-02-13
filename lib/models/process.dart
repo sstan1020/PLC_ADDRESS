@@ -1,8 +1,14 @@
-import 'package:FLUTTER_ASI/models/RegExpPattern.dart';
-import 'package:FLUTTER_ASI/models/Address.dart';
-import 'package:FLUTTER_ASI/models/json_service.dart';
-import 'package:FLUTTER_ASI/models/models.dart';
-import 'package:FLUTTER_ASI/models/nodes.dart';
+// import 'package:plc_address/models/RegExpPattern.dart';
+// import 'package:plc_address/models/Address.dart';
+// import 'package:plc_address/models/json_service.dart';
+// import 'package:FLUTTER_ASI/models/models.dart';
+// import 'package:FLUTTER_ASI/models/nodes.dart';
+
+import 'RegExpPattern.dart';
+import 'Address.dart';
+import 'json_service.dart';
+import 'models.dart';
+import 'nodes.dart';
 
 void processVEntries({
   required CNodes nodes,
@@ -17,7 +23,7 @@ void processVEntries({
   int end = -1, // 新增参数，-1 表示处理到最后
 }) {
   if (end == -1) {
-    end = nodes.vnodes.length;
+    end = nodes.vnodes.length - 1;
   }
 
   // nodes.ventries.forEach((entry) {

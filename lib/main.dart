@@ -2,8 +2,11 @@ import 'models/RegExpPattern.dart';
 import 'models/nodes.dart';
 import 'models/models.dart';
 import 'models/process.dart';
+import 'package:flutter/material.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
   CNodes nodes = await processNodes(
       Name_Path: 'lib/json_data/',
       Name_File: 'NodesPLC17_ASI703B',
@@ -21,41 +24,36 @@ Future<void> main() async {
       addressStart: 1200,
       valueSwitch: 0,
       offsetBit: 4,
-      start: 2,
-      end: 3);
+      start: 0,
+      end: -1);
 }
 
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Windows App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter Windows App111'),
+      ),
+      body: Center(
+        child: Text('Hello, Flutter Windows!'),
+      ),
+    );
+  }
+}
 
 // await example_RegExp();
 // await exampleNodesUsage();
