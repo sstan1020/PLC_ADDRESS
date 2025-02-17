@@ -26,10 +26,8 @@ void processVEntries({
     end = nodes.vnodes.length - 1;
   }
 
-  // nodes.ventries.forEach((entry) {
   for (int i = start; i <= end; i++) {
     nodes.vnodes[i].forEach((key, value) {
-      // entry.forEach((key, value) {
       String valueString = value.toString();
 
       // 检查值是否为空
